@@ -8,10 +8,14 @@ import {
 } from "react-router-dom";
 import PageRenderer from "./page-renderer";
 function App() {
+  const user = {
+    firstName: "John",
+    lastName: "Kester",
+  };
   return (
     <Router>
       <div className="">
-        <Navigation />
+        <Navigation user={user} />
         <Switch>
           <Route path="/:page" component={PageRenderer} />
           <Route path="/" render={() => <Redirect to="/home" />} />
